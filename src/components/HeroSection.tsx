@@ -1,66 +1,105 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import { ChevronDown, Sparkles, Calendar, ArrowRight } from "lucide-react";
+import heroBg from "@/assets/hero-bg-light.jpg";
+
+const stats = [
+  { value: "500+", label: "Participants" },
+  { value: "20+", label: "Speakers" },
+  { value: "6", label: "Modules" },
+  { value: "1 Day", label: "Immersion" },
+];
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-    {/* Background */}
+    {/* Full background image */}
     <div className="absolute inset-0">
-      <img src={heroBg} alt="" className="w-full h-full object-cover opacity-20" />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/90 to-background" />
+      <img src={heroBg} alt="" className="w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-background/60 to-primary/10" />
     </div>
 
-    {/* Glow orbs */}
-    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-glow-pulse" />
-    <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[120px] animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
+    {/* Animated gradient orbs */}
+    <div className="absolute top-20 right-20 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[150px] animate-glow-pulse" />
+    <div className="absolute bottom-20 left-10 w-[400px] h-[400px] bg-accent/8 rounded-full blur-[130px] animate-glow-pulse" style={{ animationDelay: "2s" }} />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[160px] animate-glow-pulse" style={{ animationDelay: "1s" }} />
 
-    <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-      <motion.p
+    {/* Grid pattern overlay */}
+    <div className="absolute inset-0 opacity-[0.03]" style={{
+      backgroundImage: "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
+      backgroundSize: "60px 60px"
+    }} />
+
+    <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+      {/* Badge */}
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-        className="text-sm md:text-base tracking-[0.3em] uppercase text-muted-foreground mb-4"
+        transition={{ delay: 0.1 }}
+        className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
       >
-        MLSA BSEAS Society Presents
-      </motion.p>
+        <Sparkles size={14} className="text-accent" />
+        <span className="text-xs font-medium text-muted-foreground tracking-wide">MLSA BSEAS Society Presents</span>
+        <Calendar size={14} className="text-primary" />
+        <span className="text-xs font-semibold text-primary">March 15, 2026</span>
+      </motion.div>
 
+      {/* Title */}
       <motion.h1
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-        className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold gradient-text text-glow mb-6"
+        transition={{ delay: 0.3, duration: 0.7 }}
+        className="text-6xl md:text-8xl lg:text-9xl font-heading font-bold mb-6 leading-[0.9]"
       >
-        AUREX AI 2026
+        <span className="gradient-text">AUREX</span>
+        <br />
+        <span className="text-foreground">AI 2026</span>
       </motion.h1>
 
+      {/* Tagline */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
-        className="text-lg md:text-2xl text-muted-foreground font-light mb-10"
+        transition={{ delay: 0.5 }}
+        className="text-lg md:text-xl text-muted-foreground font-light mb-10 max-w-xl mx-auto"
       >
         Where Intelligence Meets Innovation
       </motion.p>
 
+      {/* CTA Buttons */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8 }}
-        className="flex flex-col sm:flex-row gap-4 justify-center"
+        transition={{ delay: 0.7 }}
+        className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
       >
         <Link
           to="/register"
-          className="px-8 py-3.5 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold hover:shadow-[0_0_30px_-5px_hsl(var(--glow-blue)/0.5)] transition-all duration-300 hover:scale-105"
+          className="group inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold text-lg hover:shadow-[0_8px_40px_-8px_hsl(var(--glow-blue)/0.4)] transition-all duration-300 hover:scale-[1.02]"
         >
           Register Now
+          <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
         </Link>
         <a
           href="#modules"
-          className="px-8 py-3.5 rounded-full border border-glass-border text-foreground font-semibold hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
+          className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl glass-card text-foreground font-semibold text-lg hover:border-primary/40 transition-all duration-300"
         >
           Explore Modules
         </a>
+      </motion.div>
+
+      {/* Stats bar */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.9 }}
+        className="glass-card inline-flex divide-x divide-border rounded-2xl"
+      >
+        {stats.map((s) => (
+          <div key={s.label} className="px-6 md:px-10 py-4 text-center">
+            <p className="text-xl md:text-2xl font-heading font-bold gradient-text">{s.value}</p>
+            <p className="text-xs text-muted-foreground mt-0.5">{s.label}</p>
+          </div>
+        ))}
       </motion.div>
     </div>
 
@@ -71,8 +110,9 @@ const HeroSection = () => (
       transition={{ delay: 1.5 }}
       className="absolute bottom-8 left-1/2 -translate-x-1/2"
     >
-      <a href="#about">
-        <ChevronDown className="text-muted-foreground animate-float" size={28} />
+      <a href="#about" className="flex flex-col items-center gap-1">
+        <span className="text-xs text-muted-foreground">Scroll</span>
+        <ChevronDown className="text-muted-foreground animate-float" size={20} />
       </a>
     </motion.div>
   </section>

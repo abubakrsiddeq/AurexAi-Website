@@ -7,8 +7,8 @@ const HeroSection = () => (
   <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
     {/* Background */}
     <div className="absolute inset-0">
-      <img src={heroBg} alt="" className="w-full h-full object-cover opacity-40" />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+      <img src={heroBg} alt="" className="w-full h-full object-cover opacity-20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/90 to-background" />
     </div>
 
     {/* Glow orbs */}

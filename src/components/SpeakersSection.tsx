@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Mic2 } from "lucide-react";
 
 const speakers = [
   { name: "Dr. Ayesha Khan", company: "DeepMind", bio: "Research Lead in Reinforcement Learning" },
@@ -16,34 +16,41 @@ const SpeakersSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="speakers" className="section-padding">
-      <div className="container mx-auto max-w-6xl" ref={ref}>
+    <section id="speakers" className="section-padding relative overflow-hidden">
+      <div className="absolute top-20 left-10 w-[400px] h-[400px] bg-accent/3 rounded-full blur-[140px]" />
+
+      <div className="container mx-auto max-w-6xl relative" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-heading font-bold gradient-text mb-3">Speakers</h2>
-          <div className="neon-line max-w-xs mx-auto" />
+          <div className="section-badge mx-auto">
+            <Mic2 size={12} />
+            Featured Speakers
+          </div>
+          <h2 className="text-4xl md:text-6xl font-heading font-bold">
+            Learn from the <span className="gradient-text">Best</span>
+          </h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {speakers.map((s, i) => (
             <motion.div
               key={s.name}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.08 }}
               className="glass-card-hover p-6 text-center group"
             >
-              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center text-2xl font-heading font-bold text-foreground">
+              <div className="w-20 h-20 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/10 flex items-center justify-center text-xl font-heading font-bold text-primary group-hover:scale-105 transition-transform">
                 {s.name.split(" ").map(n => n[0]).join("")}
               </div>
               <h3 className="font-heading font-semibold text-foreground">{s.name}</h3>
-              <p className="text-sm text-primary mt-0.5">{s.company}</p>
+              <p className="text-sm text-primary font-medium mt-0.5">{s.company}</p>
               <p className="text-xs text-muted-foreground mt-2">{s.bio}</p>
-              <button className="mt-3 text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin size={18} />
+              <button className="mt-4 text-muted-foreground hover:text-primary transition-colors">
+                <Linkedin size={16} />
               </button>
             </motion.div>
           ))}

@@ -51,11 +51,11 @@ const HeroSection = () => {
         {/* Headline - Scaled Down for Elegance */}
         <motion.div variants={itemVars} className="space-y-2 mb-6">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-            <span className="text-foreground">The Future of </span>
-            <span className="gradient-text italic px-2">AUREX</span>
+            <span className="text-foreground">AUREX AI </span>
+            <span className="gradient-text italic px-2">2026</span>
           </h1>
           <p className="text-base md:text-lg text-muted-foreground font-light max-w-lg mx-auto leading-relaxed">
-            A premium one-day immersion into the nexus of <span className="text-foreground font-medium">Artificial Intelligence</span> and human creativity.
+            From Today’s Applications to Tomorrow’s Intelligence, explore real-world AI, hands-on learning, and expert insights shaping the future.
           </p>
         </motion.div>
 

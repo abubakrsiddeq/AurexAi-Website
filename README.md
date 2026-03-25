@@ -1,73 +1,93 @@
-# Welcome to your Lovable project
+# AUREX AI 2026 Website
 
-## Project info
+Official event website for **AUREX AI 2026** — a modern, responsive landing and registration experience built with React, TypeScript, Vite, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Overview
 
-## How can I edit this code?
+This project showcases the full event journey:
+- Hero and event highlights
+- About and module sections
+- Timeline, competitions, speakers, and workshops
+- Event details and footer
+- Multi-step registration flow (`/register`)
 
-There are several ways of editing your application.
+The UI uses a polished, animated style powered by `framer-motion` and a component system based on Radix UI + shadcn/ui patterns.
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **Frontend:** React 18, TypeScript
+- **Build Tool:** Vite 5
+- **Routing:** React Router
+- **Styling:** Tailwind CSS
+- **UI Primitives:** Radix UI
+- **Animation:** Framer Motion
+- **State/Data Utilities:** TanStack Query
+- **Testing:** Vitest + Testing Library
+- **Linting:** ESLint
 
-Changes made via Lovable will be committed automatically to this repo.
+## Project Structure
 
-**Use your preferred IDE**
+- `src/pages` — route pages (`Index`, `Register`, `NotFound`)
+- `src/components` — site sections and reusable UI
+- `src/components/ui` — shared UI primitives
+- `src/hooks` — custom hooks
+- `src/lib` — utility helpers
+- `src/test` — test setup and specs
+- `public` — static assets
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
 
-Follow these steps:
+- Node.js 18+
+- npm (or Bun)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+```bash
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Run Development Server
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open the local URL shown in terminal (typically `http://localhost:5173`).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` — start local development server
+- `npm run build` — create production build
+- `npm run build:dev` — build in development mode
+- `npm run preview` — preview production build locally
+- `npm run lint` — run ESLint
+- `npm run test` — run tests once
+- `npm run test:watch` — run tests in watch mode
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deployment
 
-## What technologies are used for this project?
+Build the app and deploy the generated `dist/` folder to any static hosting provider:
 
-This project is built with:
+```bash
+npm run build
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Examples: Vercel, Netlify, Cloudflare Pages, GitHub Pages, or any CDN/static host.
 
-## How can I deploy this project?
+## Quality & Maintenance
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Recommended workflow before merging changes:
 
-## Can I connect a custom domain to my Lovable project?
+1. `npm run lint`
+2. `npm run test`
+3. `npm run build`
 
-Yes, you can!
+## License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+This repository currently does not define a license. Add a `LICENSE` file if you plan to distribute or open-source the project.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Contact
+
+For event-related updates, use the official AUREX AI communication channels or repository maintainers.
